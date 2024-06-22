@@ -27,6 +27,18 @@ async function printPersonagem() {
     const data = await response.json();
     const personagens = data.results
 
+    const nomeFiltrado = document.getElementById('input-name').value
+
+    const personagemFiltrado = personagens.filter((item) => {
+        return item.name.includes(nomeFiltrado);
+    });
+
+    personagemFiltrado.map((item)=>{
+        console.log(item.image);
+    })
+
+    console.log("#####", personagemFiltrado);
+
     let container = document.getElementById('container')
 
     personagens.map((itens) => {
@@ -40,8 +52,8 @@ async function printPersonagem() {
 
         name.innerText = itens.name
         img.src = itens.image 
-        
-        div.appendChild(p)
+
+        // div.appendChild(p)
         div.appendChild(img)
 
         container.appendChild(div)
