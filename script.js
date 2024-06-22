@@ -32,10 +32,15 @@ async function printPersonagem() {
     personagens.map((itens) => {
 
         const div = document.createElement('div')
-        const p = document.createElement('p')
+        div.style.border = "1px solid black"
+
+        const name = document.createElement('p')
+
         const img = document.createElement('img')
-        p.innerText = itens.name
-        img.innerText = 
+
+        name.innerText = itens.name
+        img.src = itens.image 
+        
         div.appendChild(p)
         div.appendChild(img)
 
